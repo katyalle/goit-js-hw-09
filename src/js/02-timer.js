@@ -36,9 +36,7 @@ btStart.addEventListener('click', () => {
   if (selectedDate > Date.now()) {
     const timeDiff = selectedDate - Date.now();
     startCountdown(timeDiff);
-  } else {
-    Notify.failure('Please choose a date in the future');
-  }
+  } 
 });
 
 function startCountdown(ms) {
@@ -54,7 +52,7 @@ function startCountdown(ms) {
     tMinutes.textContent = addLeadingZero(minutes);
     tSeconds.textContent = addLeadingZero(seconds);
 
-    if (ms <= 0) {
+    if (ms <= 1000) {
       clearInterval(countdownInterval);
       alert("Countdown has finished!");
     } else {
